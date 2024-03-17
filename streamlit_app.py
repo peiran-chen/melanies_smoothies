@@ -32,7 +32,7 @@ ingredients_list = st.multiselect(
 if ingredients_list:
     ingredients_string = ''
     for x in ingredients_list:
-        ingredients_string += x
+        ingredients_string += x + ' '
         st.subheader(x, ' Nutrition Information')
         search_on=pd_df.loc[pd_df['FRUIT_NAME'] == x, 'SEARCH_ON'].iloc[0]
         fruityvice_response = requests.get(f"https://fruityvice.com/api/fruit/{search_on}")
